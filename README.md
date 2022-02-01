@@ -11,29 +11,33 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
+Useful formatter for Dart.
+* strings to titleCase
+* strings to sentenceCase (first letter in each paragraph will be uppercase.)
+* double to currency format with / without prefix (USD / US$ / $ / CAD / etc...)
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Copy following files into your project.
+```
+/lib/flutter_formatter.dart
+/lib/title_case.dart
+/lib/sentence_case.dart
+/lib/currency.dart
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+const formatter = Formatter();
+
+formatter.titleCase('this is title') 
+// --> This Is Title
+
+formatter.sentenceCase('this is sentence. another PARAGRAPH is here.') 
+// --> This is sentence. Another PARAGRAPH is here
+
+formatter.currency(120.78, minIntegerDigits: 6, fractionDigits: 1, locale: Locale.ca, showPrefix: true, prefixType: CurrencyPrefix.code)
+// --> CAD120.7
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
