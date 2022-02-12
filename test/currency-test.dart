@@ -1,5 +1,5 @@
-import 'package:flutter_formatter/currency.dart';
-import 'package:flutter_formatter/flutter_formatter.dart';
+import 'package:formatter/currency.dart';
+import 'package:formatter/flutter_formatter.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void currencyTest() {
