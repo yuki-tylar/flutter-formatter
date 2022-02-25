@@ -5,7 +5,9 @@ import 'sentence_case.dart';
 import 'title_case.dart';
 
 class Formatter {
-  final currency = currencyFormatter;
-  final sentenceCase = sentenceCaseFormatter;
-  final titleCase = titleCaseFormatter;
+  static const currency = currencyFormatter;
+  static const sentenceCase = sentenceCaseFormatter;
+  static const titleCase = titleCaseFormatter;
+
+  Formatter._();
 }

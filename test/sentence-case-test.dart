@@ -1,14 +1,14 @@
-import 'package:formatter/flutter_formatter.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:formatter/flutter_formatter.dart';
 
 void sentenceCaseTest() {
-  final fr = Formatter();
   test('sentenceCaseTest: one sentence', () {
-    expect(fr.sentenceCase('What is Lorem Ipsum?'), 'What is Lorem Ipsum?');
+    expect(
+        Formatter.sentenceCase('What is Lorem Ipsum?'), 'What is Lorem Ipsum?');
   });
 
   test('sentenceCaseTest: lorem ipsum', () {
-    expect(fr.sentenceCase(lorem), loremResult);
+    expect(Formatter.sentenceCase(lorem), loremResult);
   });
 }
 
