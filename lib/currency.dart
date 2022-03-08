@@ -23,7 +23,7 @@ String currencyFormatter(
   double fraction = ((n - integer) * 100).roundToDouble() / 100;
 
   String integerS = integer.toString();
-  String fractionS = fraction.toString().substring(2);
+  String fractionS = fraction > 0 ? fraction.toString().substring(2) : '';
 
   int numZero;
   numZero = fractionDigits - fractionS.length;

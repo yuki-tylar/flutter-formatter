@@ -5,10 +5,14 @@ import 'package:flutter_test/flutter_test.dart';
 void currencyTest() {
   test('Check if currency formatter works (basic)', () {
     double n = 120;
+    double n1 = 120.256;
 
     expect(Formatter.currency(n), '120.00');
     expect(Formatter.currency(n, locale: Locale.ca), '120.00');
     expect(Formatter.currency(n, locale: Locale.ja), '120');
+    expect(Formatter.currency(n1), '120.26');
+    expect(Formatter.currency(n1, locale: Locale.ca), '120.26');
+    expect(Formatter.currency(n1, locale: Locale.ja), '120');
   });
 
   test('Check if currency formatter works with digits settings', () {
