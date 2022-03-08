@@ -63,51 +63,48 @@ void currencyTest() {
   test('Check if currency formatter works with prefix', () {
     double n = 120;
 
-    expect(Formatter.currency(n, showPrefix: true), '\$120.00');
-    expect(
-        Formatter.currency(n, showPrefix: true, locale: Locale.ca), '\$120.00');
-    expect(Formatter.currency(n, showPrefix: true, locale: Locale.ja), '¥120');
-
+    expect(Formatter.currency(n, prefix: CurrencyPrefix.sign), '\$120.00');
     expect(
       Formatter.currency(
         n,
-        showPrefix: true,
-        prefixType: CurrencyPrefix.code,
+        prefix: CurrencyPrefix.sign,
+        locale: Locale.ca,
       ),
+      '\$120.00',
+    );
+    expect(
+      Formatter.currency(
+        n,
+        prefix: CurrencyPrefix.sign,
+        locale: Locale.ja,
+      ),
+      '¥120',
+    );
+
+    expect(
+      Formatter.currency(n, prefix: CurrencyPrefix.code),
       'USD120.00',
     );
     expect(
-      Formatter.currency(
-        n,
-        showPrefix: true,
-        prefixType: CurrencyPrefix.code,
-        locale: Locale.ca,
-      ),
+      Formatter.currency(n, prefix: CurrencyPrefix.code, locale: Locale.ca),
       'CAD120.00',
     );
     expect(
-      Formatter.currency(
-        n,
-        showPrefix: true,
-        prefixType: CurrencyPrefix.code,
-        locale: Locale.ja,
-      ),
+      Formatter.currency(n, prefix: CurrencyPrefix.code, locale: Locale.ja),
       'JPY120',
     );
 
     expect(
       Formatter.currency(
         n,
-        showPrefix: true,
-        prefixType: CurrencyPrefix.codeAndSign,
+        prefix: CurrencyPrefix.codeAndSign,
       ),
       'US\$120.00',
     );
     expect(
       Formatter.currency(
         n,
-        showPrefix: true,
-        prefixType: CurrencyPrefix.codeAndSign,
+        prefix: CurrencyPrefix.codeAndSign,
         locale: Locale.ca,
       ),
       'CA\$120.00',
@@ -115,8 +112,7 @@ void currencyTest() {
     expect(
       Formatter.currency(
         n,
-        showPrefix: true,
-        prefixType: CurrencyPrefix.codeAndSign,
+        prefix: CurrencyPrefix.codeAndSign,
         locale: Locale.ja,
       ),
       'JP¥120',

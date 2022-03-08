@@ -3,8 +3,7 @@ String currencyFormatter(
   Locale locale = Locale.us,
   int minIntegerDigits = 1,
   int? fractionDigits, // select between 0 - 2
-  bool showPrefix = false,
-  CurrencyPrefix prefixType = CurrencyPrefix.sign,
+  CurrencyPrefix? prefix,
 }) {
   n ??= 0;
   if (fractionDigits != null) {
@@ -43,21 +42,21 @@ String currencyFormatter(
   }
 
   String currency = integerS + (fractionDigits > 0 ? ('.' + fractionS) : '');
-  if (showPrefix) {
-    String prefix;
-    switch (prefixType) {
+  if (prefix != null) {
+    String _p;
+    switch (prefix) {
       case CurrencyPrefix.sign:
-        prefix = locale.sign;
+        _p = locale.sign;
         break;
       case CurrencyPrefix.code:
-        prefix = locale.code;
+        _p = locale.code;
         break;
       case CurrencyPrefix.codeAndSign:
-        prefix = locale.codeAnsSign;
+        _p = locale.codeAnsSign;
         break;
     }
 
-    currency = prefix + currency;
+    currency = _p + currency;
   }
 
   return currency;
