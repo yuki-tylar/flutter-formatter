@@ -2,7 +2,7 @@ import 'package:formatter/currency.dart';
 import 'package:formatter/flutter_formatter.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-void currencyTest() {
+void main() {
   test('Check if currency formatter works (basic)', () {
     double n = 120;
     double n1 = 120.256;
