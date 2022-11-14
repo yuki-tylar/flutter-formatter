@@ -1,3 +1,15 @@
+/// Format given number to currency.
+/// Result will have `,` separator according to given `Locale`
+/// ### example:
+/// * 120 => 120.00
+/// * 120.567 => 120.57
+/// ### @args
+/// * @required n: number
+/// * locale: Locale [Default: Locale.us]
+/// * minIntegerDigits: number [Default: 1] If given `n` is smaller than minIntegerDigits, It will fill `0` before `n`.
+/// * fractionDigits: number?  If this value is not passed, it follows Locale
+/// * prefix: CurrencyPrefix?
+
 String currencyFormatter(
   double? n, {
   Locale locale = Locale.us,

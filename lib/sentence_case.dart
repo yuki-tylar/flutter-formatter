@@ -1,3 +1,11 @@
+/// Format given string to sentenseCase
+///
+/// It converts first charactor of given string to **UpperCase**
+/// ### example
+/// * this is test => This is test
+/// ### @args
+/// * str: string
+
 String sentenceCaseFormatter(String? str) {
   str ??= '';
   str = str.trim().replaceAllMapped(RegExp(r'(\s*)([^.]+\.*)'), (Match match) {

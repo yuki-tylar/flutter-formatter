@@ -1,3 +1,8 @@
+/// format string to titleCase
+/// ### example:
+/// * this is test => This Is Test
+/// * this_is_test => This Is Test
+/// * this-is-test => This Is Test
 String titleCaseFormatter(String? str) {
   str ??= '';
   return str
